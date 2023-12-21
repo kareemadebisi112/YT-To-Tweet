@@ -1,6 +1,13 @@
 import requests
 import feedparser
 import re
+from twython import Twython
+from auth import (
+    consumer_key,
+    consumer_secret,
+    access_token,
+    access_token_secret
+)
 
 class Youtube:
     def __init__(self, channelId):
@@ -22,6 +29,9 @@ class Youtube:
             if i >= 1:
                 return
 
-class Twitter:
-    def __init__(self):
-        self.link = "https://api.twitter.com/2/tweets"
+twitter = Twython(
+    consumer_key,
+    consumer_secret,
+    access_token,
+    access_token_secret
+)
